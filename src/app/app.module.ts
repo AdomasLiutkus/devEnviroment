@@ -15,26 +15,23 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { AssetListComponent } from './component/asset-list/asset-list.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { AssetComponent } from './component/asset/asset.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule, DatePipe } from '@angular/common';
 import { MatDialogModule } from '@angular/material/dialog';
-import { TestChildComponent } from './component/test-child/test-child.component';
 import { StoreModule } from '@ngrx/store';
 import { userReducer } from './store/reducer/user.reducer';
+import { HomeComponent } from './component/home/home.component';
+import { CanActivateHome } from './guard/can-activate-home';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
     IntroComponent,
-    AssetListComponent,
-    AssetComponent,
-    TestChildComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +55,7 @@ import { userReducer } from './store/reducer/user.reducer';
     FormsModule,
     StoreModule.forRoot({ user: userReducer })
   ],
-  providers: [DatePipe],
+  providers: [DatePipe, CanActivateHome],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -13,9 +13,4 @@ describe('DataMockService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
-  
-  it('should return an entry', () => {
-    let x = service.assetInformation(1);
-    expect(x).toBeDefined();
-  });
 });

@@ -29,7 +29,7 @@ export class IntroComponent implements OnInit {
     if(valid) {
       let form: IntroForm = this.introForm.value as IntroForm;
       this.store.dispatch(setUser({user: form.name}))
-      this.router.navigate(['asset-list']);
+      this.router.navigate(['home']);
     }
   }
 }
