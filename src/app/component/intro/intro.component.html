@@ -1,0 +1,26 @@
+<div class="grid-container">
+    <form [formGroup]="introForm" (ngSubmit)="goToAssetList(introForm.valid)">
+        <mat-card class="dashboard-card">
+            <mat-card-header>
+                <mat-card-title>
+                    Hello! Before going further please enter your name!
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="dashboard-card-content">
+                <div class="row">
+                  <div class="col">
+                    <mat-form-field class="full-width">
+                      <input matInput placeholder="Vardas" formControlName="name">
+                      <mat-error *ngIf="introForm.controls['name'].hasError('required')">
+                        <strong>Required!</strong>
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row margin-small-top">
+                    <button mat-raised-button color="primary" type="submit">Begin</button>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </form>
+</div>
