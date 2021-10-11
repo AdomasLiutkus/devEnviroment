@@ -32,4 +32,10 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.content span').textContent).toContain('assets app is running!');
   });
+
+  it('should add 1 and 1', () => {
+    let x: number = 1;
+    let y: number = 1;
+    expect(x + y).toBe(2);
+  })
 });
